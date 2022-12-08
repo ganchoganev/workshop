@@ -1,0 +1,9 @@
+<div class="container">
+  <main>
+    <div class="theme-title">
+      <app-welcome-msg *ngIf="!isLoggedIn"></app-welcome-msg>
+      <app-theme-list></app-theme-list>
+    </div>
+  </main>
+  <app-recent-post></app-recent-post>
+</div>
