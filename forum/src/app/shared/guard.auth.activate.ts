@@ -6,13 +6,18 @@ import { AuthService } from "src/app/auth/auth.service";
 @Injectable({
   providedIn: 'root'
 })
+
+//guard for  auth user
 export class AuthActivate implements CanActivate {
 
-  constructor(private authServce: AuthService, private router: Router) { }
+  constructor(
+     private authServce: AuthService,
+     private router: Router
+   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     return this.authServce.user$.pipe(
-      take(1),
+      take(1), // take value
       map(user => {
         const loginRequired = route.data['loginRequired'];
         if (loginRequired === undefined || !!user === loginRequired) { return true; }

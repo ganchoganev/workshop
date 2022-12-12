@@ -20,10 +20,14 @@ export class LoginComponent {
   ) form!: ElementRef<HTMLInputElement>;
   // @ViewChild('files', { static: true }) files!: ElementRef<HTMLInputElement>;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private authService: AuthService) {
+  constructor(private activatedRoute: ActivatedRoute,
+     private router: Router,        //inject angular router into component
+      private authService: AuthService
+      ) {
 
   }
 
+  
   loginHandler(form: NgForm): void {
     // console.log(this.files.nativeElement.files);
     if (form.invalid) { return; }

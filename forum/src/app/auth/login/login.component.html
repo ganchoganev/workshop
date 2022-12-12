@@ -8,14 +8,7 @@
           placeholder="john.doe1">
       </p>
   
-      <!-- <select ngModel="456" name="test" multiple>
-        <option value="123">123</option>
-        <option value="456">456</option>
-      </select>
-  
-      {{form.value | json}} -->
-      <!-- <input #files type="file" ngModel required> -->
-  
+       
       <ng-container *ngIf="emailInput.touched">
         <p class="error" *ngIf="emailInput.errors?.['required']">
           Email is required!
@@ -43,7 +36,7 @@
   
       <p class="text-center">
         Have an account?
-        <a href="#">Register</a>
+        <a routerLink="/auth/register">Register</a>
       </p>
   
     </fieldset>

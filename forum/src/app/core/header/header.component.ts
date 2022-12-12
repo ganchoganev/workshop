@@ -17,6 +17,9 @@ export class HeaderComponent {
     return this.authService.user;
   }
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(
+    private authService: AuthService, 
+    private router: Router  //inject angular router into component
+    ) { }
 
 }

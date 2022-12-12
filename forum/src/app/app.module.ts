@@ -19,7 +19,7 @@ import { BehaviorSubject } from 'rxjs';
     
   ],
   imports: [
-    AppRoutingModule,
+    AppRoutingModule,//navigation ( valid link) on page
     BrowserModule,
     CoreModule,
     HttpClientModule,

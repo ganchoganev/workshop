@@ -7,6 +7,7 @@ import { NewThemeComponent } from './new-theme/new-theme.component';
 import { ThemeDetailComponent } from './theme-details/theme-details.component';
 import { MainComponent } from './main/main.component';
 import { RecentPostComponent } from './recent-post/recent-post.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { RecentPostComponent } from './recent-post/recent-post.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     SharedModule,
     ThemeRoutingModule
   ],

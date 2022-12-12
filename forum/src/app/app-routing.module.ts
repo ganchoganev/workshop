@@ -4,11 +4,17 @@ import { ErrorComponent } from './core/error/error.component';
 import { HomeComponent } from './core/home/home.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
+//Main navigation on App
+
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
     component: HomeComponent
+  },
+  {
+   path: 'not-found',
+    component: PageNotFoundComponent
   },
   {
     path: 'not-found',
@@ -25,10 +31,6 @@ const routes: Routes = [
   {
     path: 'theme',
     loadChildren: () => import('./theme/themes.module').then(m => m.ThemesModule)
-  },
-  {
-    path: '**',
-    redirectTo: '/not-found'
   }
 ];
 
@@ -36,6 +38,8 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
+
+// other module can use this
 export class AppRoutingModule {
 
 }

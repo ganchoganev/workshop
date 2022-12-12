@@ -1,15 +1,17 @@
 import { RouterModule, Routes } from "@angular/router";
-import { AuthActivate } from "../shared/auth.activate";
+import { AuthActivate } from "../shared/guard.auth.activate";
 import { LoginComponent } from "./login/login.component";
 import { LogoutComponent } from "./logout/logout.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { RegisterComponent } from "./register/register.component";
 
+//Auth navigation 
+
 const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    canActivate: [AuthActivate],
+    canActivate: [AuthActivate], // GUARD 
     data: {
       title: 'Login',
       loginRequired: false
@@ -18,7 +20,7 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
-    canActivate: [AuthActivate],
+    canActivate: [AuthActivate], // GUARD 
     data: {
       title: 'Register',
       loginRequired: false
@@ -44,28 +46,6 @@ const routes: Routes = [
   }
 ];
 
-// const sameRoutes: Routes = [
-//   {
-//     path: 'auth',
-//     children: [
-//       {
-//         path: 'login',
-//         component: LoginComponent
-//       },
-//       {
-//         path: 'register',
-//         component: RegisterComponent
-//       },
-//       {
-//         path: 'logout',
-//         component: LogoutComponent
-//       },
-//       {
-//         path: 'profile',
-//         component: ProfileComponent
-//       }
-//     ]
-//   }
-// ];
+
 
 export const AuthRoutingModule = RouterModule.forChild(routes);

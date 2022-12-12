@@ -3,7 +3,9 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, catchError, filter, of, Subscription, tap, throwError } from 'rxjs';
 import { IUser } from '../interfaces';
 
-@Injectable({
+
+//Decorator that marks a class as available to be provided and injected as a dependency
+@Injectable({       // can be imported in other module
   providedIn: 'root'
 })
 export class AuthService implements OnDestroy {
@@ -16,7 +18,7 @@ export class AuthService implements OnDestroy {
   user: IUser | null = null;
 
   get isLoggedIn() {
-    return this.user !== null;
+    return this.user !== null; // return current user object or null
   }
 
   subscription: Subscription;

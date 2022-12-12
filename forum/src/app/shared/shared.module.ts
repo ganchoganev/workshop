@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoaderComponent } from './loader/loader.component';
 import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
+import { ShortenPipe } from './pipes/shorten.pipe';
+import { ElapsedTimePipe } from './pipes/elapsed-time.pipe';
+import { AppEmailDirective } from './validate/app-email.directive';
 
 
 
@@ -10,7 +13,10 @@ import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
 @NgModule({
   declarations: [
     LoaderComponent,
-    WelcomeMsgComponent
+    WelcomeMsgComponent,
+    AppEmailDirective,
+    ShortenPipe,
+    ElapsedTimePipe
   ],
   imports: [
     CommonModule,
@@ -18,7 +24,10 @@ import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
   ],
   exports: [
     LoaderComponent,
-    WelcomeMsgComponent
+    WelcomeMsgComponent,
+    AppEmailDirective,
+    ShortenPipe,
+    ElapsedTimePipe
   ]
 })
 export class SharedModule { }

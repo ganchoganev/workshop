@@ -13,12 +13,12 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterComponent {
 
-  form = this.fb.group({
+  form = this.formB.group({
     username: ['', [Validators.required, Validators.minLength(5)]],
     email: ['', [Validators.required, appEmailValidator(appEmailDomains)]],
     ext: [''],
     tel: [''],
-    pass: this.fb.group({
+    pass: this.formB.group({
       password: ['', [Validators.required, Validators.minLength(5)]],
       rePassword: []
     }, {
@@ -26,14 +26,17 @@ export class RegisterComponent {
     })
   });
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { }
+  constructor(private formB: FormBuilder,
+     private authService: AuthService,
+      private router: Router    //inject angular router into component
+      ) { }
 
   registerHandler() {
-    if (this.form.invalid) { return; }
+    if (this.form.invalid) { return; } 
     const { username, email, pass: { password, rePassword } = {}, tel } = this.form.value;
     this.authService.register(username!, email!, password!, rePassword!, tel || undefined)
       .subscribe(user => {
-        this.router.navigate(['/theme/recent']);
+        this.router.navigate(['/theme/recent']); // after success register redirect to inner page
       });
   }
 }
