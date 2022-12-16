@@ -18,11 +18,17 @@ export class ProfileComponent {
 
   get user() {
     const { username, email, tel: telephone } = this.authServie.user!;
-    const [ext, ...tel] = telephone.split(' ');
+    const [ext, ...tel] = ['','',''];
+    if(telephone!=null){
+      const [ext, ...tel] = telephone.split(' ') ;
+    }
+   
+    
     return {
       username,
       email,
-      tel: tel.join(' '),
+      // tel: tel.join(' '),
+      tel,
       ext
     };
   }

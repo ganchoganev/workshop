@@ -12,7 +12,7 @@ export class MainComponent implements DoCheck {
   //   return this.authService.isLoggedIn;
   // }
 
-  isLoggedIn = false;
+  isLoggedIn = true;
 
 
   constructor(private authService: AuthService) {

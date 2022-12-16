@@ -1,36 +1,31 @@
 <div *ngIf="errorFetcingData">Error loading theme</div>
-<app-loader *ngIf="!theme"></app-loader>
-<div class="theme-content">
+<!-- <form #form="ngForm"> -->
+<div class="theme-content p-4">
   <!-- theme-title  -->
   <div class="theme-title">
     <div class="theme-name-wrapper">
       <div class="theme-name">
-        <ng-container> <h2> {{theme.themeName}}</h2></ng-container>
-        <p>Date: <time>2020-10-10 12:08:28</time></p>
+         <h2>  {{theme?.themeName}}</h2>
+        <p>Date: <time>{{theme?.created_at }}</time></p>
       </div>
       <div class="subscribers">
-        <p>Subscribers: <span>456</span></p>
+        <p>Subscribers: <span>{{theme?.subscribers?.length}}</span></p>
         <!-- <button class="subscribe">Subscribe</button>
                         <button class="unsubscribe">Unsubscribe</button> -->
       </div>
     </div>
   </div>
   <!-- comment  -->
-  <div class="comment">
+  <div *ngFor="let post of postList; let i = index"  class="comment">
     <header class="header">
-      <p><span>David</span> posted on <time>2020-10-10 12:08:28</time></p>
+      <p><span>{{post?.userId?.username}}</span> posted on <time>{{post.updatedAt | elapsedTime}}</time></p>
     </header>
     <div class="comment-main">
       <div class="userdetails">
-        <img src="./profile.png" alt="avatar">
+        <img src="/assets/profile.png" alt="avatar">
       </div>
       <div class="post-content">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure facere sint dolorem quam,
-          accusantium ipsa veniam laudantium inventore aut, tenetur quibusdam doloribus. Incidunt odio
-          nostrum facilis ipsum dolorem deserunt illum?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure facere sint dolorem quam,
-          accusantium ipsa veniam laudantium inventore aut, tenetur quibusdam doloribus. Incidunt odio
-          nostrum facilis ipsum dolorem deserunt illum?</p>
+        <span>{{post?.text}}</span>
       </div>
     </div>
     <div class="footer">
@@ -39,32 +34,16 @@
       <p><span>5</span> likes</p>
     </div>
   </div>
-  <div class="comment">
-    <header class="header">
-      <p><span>Mark</span> posted on <time>2020-10-10 14:28:11</time></p>
-    </header>
-    <div class="comment-main">
-      <div class="userdetails">
-        <img src="./profile.png" alt="avatar">
-      </div>
-      <div class="post-content">
-        <p>Lorem ipsum dolor sit amet consectetur </p>
+  <form #form="ngForm"  (ngSubmit)="newPostHandler(form)">
+    <div class="answer-comment">
+      <p><span>currentUser</span> comment:</p>
+      <div class="answer">
+        <textarea type="text" #textInput="ngModel" ngModel required [minlength]="10" name="postText" id="postText"
+        rows="8" class="height"></textarea>
+         <button class="public" [disabled]="form.invalid">Post</button>
+        
       </div>
     </div>
-    <div class="footer">
-      <!-- <i class="fas fa-thumbs-up"></i>
-                    <i class="fas fa-thumbs-down"></i> -->
-      <p><span>3</span> likes</p>
-    </div>
-  </div>
-  <div class="answer-comment">
-    <p><span>currentUser</span> comment:</p>
-    <div class="answer">
-      <form>
-        <textarea name="postText" id="comment" cols="30" rows="10"></textarea>
-        <button>Post</button>
-      </form>
-    </div>
-  </div>
-
+  </form>
 </div>
+<!-- < -->

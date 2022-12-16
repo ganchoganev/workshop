@@ -3,7 +3,7 @@
 <div *ngFor="let theme of themeList; let i = index" class="theme-container">
   <div class="theme-name-wrapper">
     <div class="theme-name">
-      <a href="#" class="normal">
+      <a   routerLink="/theme/detail/{{theme._id}}" class="normal">
         <h2>{{theme.themeName | shorten : 25}}</h2>
       </a>
       <div class="columns">

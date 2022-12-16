@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ITheme } from '../interfaces';
+import { ITheme,IPost } from '../interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +27,10 @@ export class ThemeService {
 
   updateTheme(id: string, name: string, text: string) {
     return this.http.put<ITheme>('/api/themes/' + id, { themeName: name, postText: text });
+  }
+  newPost(themeId: number, postText: string) {
+    return this.http.put<IPost>('/api/themes/' +themeId +'/posts/', { postText });
+  
   }
 
   deleteThemePost(themeId: string, postId: string) {

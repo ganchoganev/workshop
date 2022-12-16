@@ -16,10 +16,7 @@ const routes: Routes = [
    path: 'not-found',
     component: PageNotFoundComponent
   },
-  {
-    path: 'not-found',
-    component: PageNotFoundComponent
-  },
+ 
   {
     path: 'error',
     component: ErrorComponent

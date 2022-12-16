@@ -24,5 +24,6 @@ export class ApiService {
   loadPosts(limit?: number) {
     return this.httpClient.get<IPost[]>(`${apiURL}/posts${limit ? `?limit=${limit}` : ``}`);
   }
+  
 
 }
