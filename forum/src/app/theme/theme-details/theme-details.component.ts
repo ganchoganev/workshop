@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute , Route} from '@angular/router';
+import { ActivatedRoute , Router} from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { IPost, ITheme } from 'src/app/interfaces';
 import { ThemeService } from '../theme.service';
 import { NgForm } from '@angular/forms';
+import { AuthService } from 'src/app/auth/auth.service';
 // import { AuthService } from '../../auth/auth.service';
 
 
@@ -21,14 +22,16 @@ export class ThemeDetailComponent  {
   theme: ITheme | null = null;
   errorFetcingData = false;
   postList: IPost[] | null = null;
- 
+  
 
 
   constructor( 
-    // private authService: AuthService,
+   private router:Router,
+    private authService: AuthService,
     private apiService: ApiService,
     private themeService:ThemeService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute
+    ) { }
 
     newPostHandler(form: NgForm): void {
       if (form.invalid) { return; }
@@ -39,8 +42,33 @@ export class ThemeDetailComponent  {
           // this.router.navigate(['/theme/recent'])
         })
     }
+    newLikeHandler(event: Event,post: IPost): void {
+      const myLike= post.likes.findIndex(e => e === this.theme?.userId._id);
+      if(myLike!=-1){
+        return;  // my user is already liked post
+      }
+      this.themeService.newPostLike(post._id)
+        .subscribe(() => {
+           this.router.navigate(['ThemeDetailComponent']);
+        })
+    }
+    removeLikeHandler(event: Event,post: IPost): void {
+      const myLike= post.likes.findIndex(e => e === this.theme?.userId._id);
+      if(myLike==-1){
+        return; // my user is not like post
+      }
+      post.likes = post.likes.filter(item => item !== this.theme?.userId._id); // remove my user from  Array of likes
+      this.themeService.newPostLike(post._id)
+        .subscribe(() => {
+           this.router.navigate(['ThemeDetailComponent']);
+        })
+    }
+
 
   ngOnInit(): void {
+    if (!this.authService.isLoggedIn) {  // if not loged redirect
+     this.router.navigate(['/auth/login']);
+    }
     this.apiService.loadTheme(this.themeID).subscribe({
       // if(this.authServie.user!=null)
       next: (value) => {

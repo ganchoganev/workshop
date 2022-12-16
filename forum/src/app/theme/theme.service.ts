@@ -30,7 +30,9 @@ export class ThemeService {
   }
   newPost(themeId: number, postText: string) {
     return this.http.put<IPost>('/api/themes/' +themeId +'/posts/', { postText });
-  
+  }
+  newPostLike(postId: string) {
+    return this.http.put<IPost>('/api/likes/'+postId ,{});
   }
 
   deleteThemePost(themeId: string, postId: string) {
