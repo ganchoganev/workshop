@@ -20,6 +20,10 @@ export class AuthService implements OnDestroy {
   get isLoggedIn() {
     return this.user !== null; // return current user object or null
   }
+  // get errorFetchData() {
+  //   return this.errorFetcingData!==null; 
+  // }
+  //    errorFetcingData :boolean = false;
 
   subscription: Subscription;
 
@@ -35,8 +39,12 @@ export class AuthService implements OnDestroy {
   }
 
   login(email: string, password: string) {
-    return this.http.post<any>('/api/login', { email, password })
+    return  this.http.post<any>('/api/login', { email, password })
       .pipe(tap(user => this.user$$.next(user)));;
+      // catchError((err) => {
+      //   this.errorFetcingData=true;
+      //   return throwError(() => err);
+      // }));
   }
 
   logout() {
