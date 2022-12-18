@@ -1,0 +1,48 @@
+<header>
+  <div class="mini-navbar-wrap flex-row align-items-center justify-content-between w-100 flex-wrap  container">
+    <div class="logo-wrap px-4 d-flex">
+      <a class="logo"><div class="logo"><img class="w-100"  src="/assets/Gancho.png"></div></a>
+    </div>
+    <div class="mini-navbar">
+      
+
+      <ng-template #loggedOutTemplate>
+        <ul>
+          <li>
+            <a routerLink="/auth/login">Login</a>
+          </li>
+          <li>
+            <a routerLink="/auth/register">Register</a>
+          </li>
+        </ul>
+      </ng-template>
+
+      <ng-template #loggedInTemplate>
+        <ul>
+          <li class="userProf">
+            <a routerLink="/auth/profile">{{user?.username}}'s profile</a>
+          </li>
+          <li>
+            <a routerLink="/auth/logout">Logout</a>
+          </li>
+        </ul>
+      </ng-template>
+
+      <ng-container *ngTemplateOutlet="isLoggedIn ? loggedInTemplate : loggedOutTemplate"></ng-container>
+    </div>
+  </div>
+  <nav>
+    <ul class="align-items-center justify-content-center main-menu">
+      <li class="px-2 g-navi">
+        <a routerLink="/">Home</a>
+      </li>
+      <li class="px-2 g-navi">
+        <a routerLink="/theme/recent">Themes</a>
+      </li>
+      <li class="px-2 g-navi">
+        <a routerLink="/theme/new">New Theme</a>
+      </li>
+    </ul>
+  </nav>
+
+</header>

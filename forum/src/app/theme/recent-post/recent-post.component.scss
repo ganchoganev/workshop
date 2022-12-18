@@ -1,0 +1,56 @@
+
+:host{
+    min-width: 35%;
+    padding-left: 1em;
+    background-color: var(--gan-gray);
+}
+aside {
+    // width: 29%;
+    margin-top: 1em;
+    font-size: 0.8em;
+}
+
+.aside * {
+    margin: 0;
+    padding: 0;
+}
+
+.aside>div {
+    
+    border-radius: 0.3em;
+    padding: 0.3em 0.5em;
+}
+
+.title {
+    font-size: 1.5em;
+    border-bottom: none;
+}
+
+.aside .aside-theme {
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+}
+
+.aside h3 {
+   
+    font-size: 1.2rem;
+  
+    padding-left: 0.5rem;
+}
+
+.aside-theme+.aside-theme {
+    border-top: dashed 1px #999;
+}
+
+.aside-theme .name {
+    text-align: left;
+}
+.aside-theme .dt {
+    text-align: right;
+}
+
+
+.aside-theme a {
+    text-decoration: none;
+    color: inherit;
+}
