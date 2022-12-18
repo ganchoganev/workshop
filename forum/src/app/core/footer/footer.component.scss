@@ -1,10 +1,10 @@
 footer {
-    background: rgb(0, 212, 255);
-    ;
-    margin-top: 1em;
+    background: var(--bs-gray-600);
+    margin-top: 1em; 
+    color: white;
     // position: absolute;
     bottom: 0;
-    width: 99%;
+    // width: 99%;
     // max-width: 1366px;
 }
  
@@ -16,5 +16,8 @@ footer p {
 }
 
 footer span {
-    font-size: 1.5em;
+    font-size: 1.1em;
+}
+footer .logo     {
+    width: 150px;
 }

@@ -34,12 +34,15 @@
       <p><span>{{post?.likes?.length}}</span> likes</p>
     </div>
   </div>
-  <form class="d-none" #form="ngForm"  (ngSubmit)="newPostHandler(form)">
+  <form  #form="ngForm"  (ngSubmit)="newPostHandler(form)">
     <div class="answer-comment">
       <p><span>currentUser</span> comment:</p>
       <div class="answer">
         <textarea type="text" #textInput="ngModel" ngModel required [minlength]="10" name="postText" id="postText"
         rows="8" class="height"></textarea>
+        <p class="error" *ngIf="textInput.errors?.['minlength']">
+          Password must be at least 10 characters!
+        </p>
          <button class="public" [disabled]="form.invalid">Post</button>
         
       </div>

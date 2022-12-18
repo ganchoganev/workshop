@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --gan-bacgrd:white;
+    --gan-green: #1ab188; --gan-green: #0c8b61; --gan-greenLight: #c0fae7; --gan-greenLight2: #7bf4cd; --fb-input: #fff8e3fa; --fb-btnHover: #10b67f; --fb-tblHeader: #03434f;
+    --fb-tblRowLight: #e5eff7;
+    --fb-tblRowDark: #d3e0e9;
+    --fb-orange: #fd9502;
+    --fb-rowSelect: #fd9502;
+    --fb-bodyColor: #eaedf2; --docTitle: #ffffe1; --fb-txtColor:#495057;
+    --fb-red:#ce414e;
+    --gan-red:#d63241c7;
+    --gan-gray: #0000000a;
+    --gan-background-light: #ffffe1;
+    --gan-bacgrdNoActive:#f90c0c38;
+    --gan-bacgrdNoActive:#00000013;
+    --gan-bkgrd-blue:#96dafe;
+    --gan-bkgrd-silver:#d4d0c8;
+    --gan-selectRow:#3085ffba;
+    --gan-canceledTable: #ffe3e3;
+    
+    --input0:#fff8e3fa ;
+    --selectRow-tree-txt:white;
+    }
+    
+    .col0  .grow-shrink {
+        flex-grow: 1;
+        flex-shrink: 1;
+        min-height: 0.1%;
+    }
+    .row0  .grow-shrink {
+        flex-grow: 1;
+        flex-shrink: 1;
+        min-height: 0.1%;
+    }
+
+    .col0{
+     align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    }
+    .row0{
+        align-items: stretch;
+       display: flex;
+       flex-direction: row;
+       justify-content: flex-start;
+       }
+   body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    }
+    .color-white{
+        color: white;
+    }

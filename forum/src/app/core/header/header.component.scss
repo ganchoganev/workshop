@@ -1,13 +1,15 @@
 header {
-    background: rgb(0, 128, 182);
-    background: linear-gradient(0deg, rgba(0, 128, 182, 1) 0%, rgba(0, 128, 182, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    background: rgb(255, 255, 255);
+    // background: linear-gradient(0deg, rgba(0, 128, 182, 1) 0%, rgba(0, 128, 182, 1) 35%, rgba(0, 212, 255, 1) 100%);
 }
-
+header .logo{
+    width: 150px;   
+}
 header ul {
     padding: 0;
     display: flex;
     align-items: center;
-    width: 75%;
+    justify-content: flex-end;
     margin: auto;
 }
 
@@ -17,7 +19,8 @@ header ul span {
 }
 
 .mini-navbar ul {
-    border: 1px solid #00d4ff;
+    // border: 1px solid #00d4ff;
+    background-color: var(--gan-green);
     border-radius: 0.3em;
     padding-left: 0;
     width: 100%;
@@ -46,28 +49,103 @@ nav {
 }
 
 .logo-wrap {
-    font-family: 'Parisienne', cursive;
-    letter-spacing: .5em;
+    // font-family: 'Parisienne', cursive;
+    // letter-spacing: .5em;
     margin: 0.5em 0;
 }
-
+.main-menu{
+    background-color:var(--gan-green);
+}
+.g-navi:hover{
+    cursor: pointer;
+    color:black;
+}
+.g-navi:hover{
+    cursor: pointer;
+    color:black;
+}
 .mini-navbar-wrap {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 75%;
+    // width: 75%;
     margin: auto;
+}
+.main-menu li {
+     color: white;
 }
 
 /* mini-navbar */
 
-.mini-navbar ul {
-    background-color: #6ba1b8;
+.mini-navbar .userProf {
+    background-color: var(--fb-tblHeader);
     border-radius: 5px;
 }
+.mini-navbar .userProf a {
+   
+    color: white!important;
+}
+.mini-navbar ul {
+    background-color:transparent;
+    border-radius: 5px;
+    color: green!important;
+}
+.mini-navbar ul li a {
+    background-color:transparent;
+    border-radius: 5px;
+    color: green;
+}
+
+
 
 .mini-navbar ul li+li {
     border-left: 1px solid lightgrey;
     padding-left: .5em;
 }
+
+
+///////////////////////////////
+
+
+.g-navi {
+    margin: 0 20px;
+    position: relative;
+  }
+  .g-navi  a {
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+   
+    font-size: 26px;
+    line-height: 1;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    
+  
+    // background-image: linear-gradient(to right, #23abd4, #23abd4 50%, #fff 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    transition: all 0.3s ease-in-out;
+  }
+  .g-navi  a:before {
+    display: block;
+    content: "";
+    width: 0;
+    height: 3px;
+    bottom: 5px;
+    left: 0;
+    bottom: -3px;
+    z-index: 0;
+    position: absolute;
+    background: #a0a0a0;
+    transition: all 0.3s ease-in-out;
+  }
+  .g-navi  a:hover {
+    background-position: 0%;
+  }
+  .g-navi  a:hover:before {
+    width: 100%;
+  }

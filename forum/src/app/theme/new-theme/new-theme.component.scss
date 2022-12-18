@@ -1,7 +1,13 @@
 /* new-theme */
+:host{
+   width: 100%;
+   height: 100%;
+   align-items: center;
+   justify-self: center;
 
+}
 .new-theme-border {
-    border: 1px solid;
+    
     border-radius: 1em;
     width: 80%;
     margin: auto;
@@ -14,17 +20,16 @@
 }
 
 .header-background {
-    background-color: #4ebced;
-    border: 1px solid #4ebced;
+    background-color: var(--fb-tblHeader);
+   
     padding: 1.5em;
-    padding-bottom: 0;
+   
     margin-bottom: 1em;
-    border-top-right-radius: 1em;
-    border-top-left-radius: 1em;
+  
 }
 
 .header-background span {
-    background-color: #fff;
+    color: #fff;
     padding: 0.5em;
     margin-top: 1em;
     border-radius: 0.3em;
@@ -69,6 +74,13 @@ button+button {
 
 .new-theme-buttons button {
     padding: 0.4em 1.5em;
+    border: 1px solid #333333;
+    border-radius: 0.3em;
+}
+.new-theme-buttons .public {
+    padding: 0.4em 1.5em;
+    color: white;
+    background-color: var(--gan-green);
     border: 1px solid #333333;
     border-radius: 0.3em;
 }

@@ -74,7 +74,7 @@ export class ProfileComponent {
   }
 
   saveProfile(): void {
-    this.formSubmitted = true;
+    // this.formSubmitted = true;
     if (this.form.invalid) { return; }
     const { username, email, ext, tel } = this.form.value;
     this.authServie.setProfile(username, email, ext + ' ' + tel).subscribe(() => {

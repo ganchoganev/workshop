@@ -15,7 +15,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.3em 0.5em;
-    border: 1px solid #999;
+   
     border-radius: 0.3em;
     font-size: 0.8em;
     margin-top: 1em;
@@ -77,7 +77,7 @@
 
 .comment {
     margin-top: 1em;
-    border: 1px solid;
+   
     border-radius: 0.3em;
     width: 100%;
     padding: 1em;
@@ -85,7 +85,7 @@
 
 .comment header p {
     padding: 0.3em;
-    text-align: center;
+    text-align: left;
     background-color: #ffffff;
     border-bottom: 1px dashed;
     margin-right: 0;
@@ -172,7 +172,7 @@
 }
 
 .answer {
-    border: 1px solid;
+   
     border-radius: 0.3em;
     flex-basis: 85%;
     text-align: center;
@@ -190,6 +190,7 @@
     padding: 0.2em 1em;
     border: 1px solid;
     border-radius: 0.3em;
+    background-color: var(--gan-green);
 }
 
 .answer button:hover {

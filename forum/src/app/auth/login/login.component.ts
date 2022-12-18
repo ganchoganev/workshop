@@ -44,6 +44,7 @@ export class LoginComponent {
         if( this.errorFetcingData){return}
         // if(this.authService.errorFetchData){this.errorFetcingData=true;}
         this.router.navigate(['/theme/recent']);
+        localStorage.setItem('user_ID', user._id);
       });
 
     const returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';

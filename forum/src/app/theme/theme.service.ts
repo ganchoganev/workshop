@@ -29,7 +29,10 @@ export class ThemeService {
     return this.http.put<ITheme>('/api/themes/' + id, { themeName: name, postText: text });
   }
   newPost(themeId: number, postText: string) {
-    return this.http.put<IPost>('/api/themes/' +themeId +'/posts/', { postText });
+    // return this.http.put<IPost>('/api/themes/' +themeId +'/posts/', { postText });
+    // console.log( this.http.put<IPost>('/api/themes/' +themeId , { postText }));
+    
+    return this.http.post<ITheme>('/api/themes/' +themeId , { postText });
   }
   newPostLike(postId: string) {
     return this.http.put<IPost>('/api/likes/'+postId ,{});

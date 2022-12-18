@@ -1,7 +1,7 @@
 <header>
-  <div class="mini-navbar-wrap">
-    <div class="logo-wrap">
-      <p class="logo"><span class="logo">SoftUni Forum</span></p>
+  <div class="mini-navbar-wrap flex-row align-items-center justify-content-between w-100 flex-wrap  container">
+    <div class="logo-wrap px-4 d-flex">
+      <a class="logo"><div class="logo"><img class="w-100"  src="/assets/Gancho.png"></div></a>
     </div>
     <div class="mini-navbar">
       
@@ -19,7 +19,7 @@
 
       <ng-template #loggedInTemplate>
         <ul>
-          <li>
+          <li class="userProf">
             <a routerLink="/auth/profile">{{user?.username}}'s profile</a>
           </li>
           <li>
@@ -32,14 +32,14 @@
     </div>
   </div>
   <nav>
-    <ul>
-      <li>
+    <ul class="align-items-center justify-content-center main-menu">
+      <li class="px-2 g-navi">
         <a routerLink="/">Home</a>
       </li>
-      <li>
+      <li class="px-2 g-navi">
         <a routerLink="/theme/recent">Themes</a>
       </li>
-      <li>
+      <li class="px-2 g-navi">
         <a routerLink="/theme/new">New Theme</a>
       </li>
     </ul>
